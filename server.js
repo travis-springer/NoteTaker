@@ -1,7 +1,5 @@
 //DEPENDENCIES
 const express = require('express');
-const path = require('path');
-const fs = require('fs');
 
 //EXPRESS CONFIGURATION
 const app = express();
@@ -16,6 +14,4 @@ require('./routes/apiRoutes')(app);
 require('./routes/htmlRoutes')(app);
 
 //LISTENER
-app.listen(PORT, () => {
-    console.log(`Server started on PORT: ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server started on PORT: ${PORT}`));
