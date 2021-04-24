@@ -17,6 +17,13 @@ module.exports = (app) => {
             noteData = JSON.parse(data);
             noteData.push(newNote);
 
+            let num = 1
+            noteData.forEach((note, index) => {
+                note.id = num;
+                num++;
+                return noteData;
+            });
+
             fs.writeFile('./db/db.json', JSON.stringify(noteData), (err, data) => {
                 if(err) throw err;
             });
